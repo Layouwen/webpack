@@ -162,7 +162,3 @@ devServer: {
     "start": "webpack-dev-server",
 },
 ```
-
-```js
-devtool: 'inline-source-map'
-```
