@@ -1,3 +1,7 @@
 module.exports = {
-    mode: 'production'
+    mode: 'production',
+    entry: './src/index.js',
+    output: {
+        filename: '[name].[contenthash].js'
+    }
 }

@@ -1,6 +1,6 @@
 # webpack - study
 
-## 命令
+## 初始配置
 
 1. 初始化
 
@@ -29,4 +29,40 @@ npx webpack --version
 module.exports = {
     mode: '模式'
 }
+```
+
+3. 打包
+
+```bash
+./node_modules/.bin/webpack
+或
+npx webpack
+```
+
+4. 设置目标文件(webpack.config)
+
+- 进入位置
+entry: '路径'
+- 输出位置
+默认dist
+- 输出名
+filename: '名字'
+
+> 设置打包hash
+> filename: '[name].[contenthash].js'
+
+5. 设置build(package)
+
+```js
+"scripts":{
+    "build": "rm -rf dist && npx webpack"
+}
+```
+
+使用
+
+```bash
+npm run build
+或
+yarn build
 ```
