@@ -170,3 +170,9 @@ devServer: {
     "start": "webpack-dev-server",
 },
 ```
+
+### 引入SCSS
+
+```bash
+yarn add sass-loader dart-sass --dev
+```
