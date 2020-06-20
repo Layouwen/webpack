@@ -76,6 +76,8 @@ yarn add html-webpack-plugin --dev
 设置模板(webpack.config)
 
 ```js
+var HtmlWebpackPlugin = require('html-webpack-plugin')
+
 plugins: [new HtmlWebpackPlugin({
     title: 'test - 首页',
     template: 'src/assets/index.html'
@@ -86,4 +88,22 @@ plugins: [new HtmlWebpackPlugin({
 
 ```html
 <title><%= htmlWebpackPlugin.options.title %></title>
+```
+
+1. 引入css文件
+
+```bash
+yarn add css-loader --dev
+yarn add style-loader --dev
+```
+
+设置配置文件(webpack.config)
+
+```js
+module: {
+    rules: [{
+        test: /\.css$/i,
+        use: ['style-loader', 'css-loader']
+    }]
+}
 ```
