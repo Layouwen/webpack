@@ -227,3 +227,18 @@ rules: {
     loader: ['style-loader', 'css-loader', 'stylus-loader']
 },
 ```
+
+### 引入image
+
+```bash
+yarn add file-loader --dev
+```
+
+设置配置文件(webpack.config)
+
+```js
+rules: {
+    test: /\.(png|svg|jpg|gif)$/,
+    use: 'file-loader'
+},
+```
