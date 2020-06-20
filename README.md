@@ -176,3 +176,41 @@ devServer: {
 ```bash
 yarn add sass-loader dart-sass --dev
 ```
+
+设置配置文件(webpack.config)
+
+```js
+module: {
+    rules: [{
+        test: /\.scss$/i,
+        use: [
+            'style-loader',
+            'css-loader',
+            {
+                loader: 'sass-loader',
+                options: {
+                    implementation: require('dart-sass')
+                }
+            }
+        ]
+    }, ]
+}
+```
+
+### 引入Less
+
+```bash
+yarn add less --dev
+yarn add less-loader --dev
+```
+
+设置配置文件(webpack.config)
+
+```js
+rules: {
+    test: /\.less$/,
+    loader: ['style-loader', 'css-loader', 'less-loader']
+},
+```
+
+### 引入Stylus
