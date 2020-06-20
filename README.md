@@ -21,7 +21,9 @@ npx webpack --version
 
 2. 设置模式
 
-创建webpack.config.js文件，选择模式 development
+创建webpack.config.js文件，选择模式
+- development 开发模式
+- production 发布模式
 
 ```js
 module.exports = {
