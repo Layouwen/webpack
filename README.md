@@ -242,3 +242,22 @@ rules: {
     use: 'file-loader'
 },
 ```
+
+### 懒加载
+
+lazy.js
+
+```js
+export default function lazy() {
+    console.log('我是懒加载函数')
+}
+```
+
+```js
+const promise = import('./lazy.js')
+promise.then((module) => {
+    module.default()
+}, () => {
+    console.log('加载失败')
+})
+```
