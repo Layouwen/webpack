@@ -2,7 +2,7 @@
 
 ## 初始配置
 
-1. 初始化
+### 初始化
 
 ```bash
 npm init -y
@@ -19,7 +19,7 @@ yarn add webpack webpack-cli --dev
 npx webpack --version
 ```
 
-2. 设置模式
+### 设置模式
 
 创建webpack.config.js文件，选择模式
 - development 开发模式
@@ -31,7 +31,7 @@ module.exports = {
 }
 ```
 
-3. 打包
+### 打包
 
 ```bash
 ./node_modules/.bin/webpack
@@ -39,7 +39,7 @@ module.exports = {
 npx webpack
 ```
 
-4. 设置目标文件(webpack.config)
+### 设置目标文件(webpack.config)
 
 - 进入位置
 entry: '路径'
@@ -51,7 +51,7 @@ filename: '名字'
 > 设置打包hash
 > filename: '[name].[contenthash].js'
 
-5. 设置build(package)
+### 设置build(package)
 
 ```js
 "scripts":{
@@ -67,7 +67,7 @@ npm run build
 yarn build
 ```
 
-6. 安装html-webpack-plugin
+### 安装html-webpack-plugin
 
 ```bash
 yarn add html-webpack-plugin --dev
@@ -123,23 +123,17 @@ plugins: {
         ignoreOrder: false,
     })
 }
-module: {
-    rules: [
-        {
-            test: /\.css$/,
-            use: [
-                {
-                    loader: MiniCssExtractPlugin.loader,
-                    options: {
-                        publicPath: '../',
-                        hmr: process.eny.NODE_ENV === 'development',
-                    }
-                },
-                'css-loader',
-            ]
+
+use: [
+    {
+        loader: MiniCssExtractPlugin.loader,
+        options: {
+            publicPath: '../',
+            hmr: process.env.NODE_ENV === 'development',
         }
-    ]
-}
+    },
+    'css-loader',
+]
 ```
 
 ### 安装webpack-dev-server
