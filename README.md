@@ -214,3 +214,16 @@ rules: {
 ```
 
 ### 引入Stylus
+
+```bash
+yarn add stylus stylus-loader --dev
+```
+
+设置配置文件(webpack.config)
+
+```js
+rules: {
+    test: /\.styl$/,
+    loader: ['style-loader', 'css-loader', 'stylus-loader']
+},
+```
