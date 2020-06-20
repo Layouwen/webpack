@@ -90,14 +90,17 @@ plugins: [new HtmlWebpackPlugin({
 <title><%= htmlWebpackPlugin.options.title %></title>
 ```
 
-1. 引入css文件
+### 引入css文件
 
 ```bash
 yarn add css-loader --dev
 yarn add style-loader --dev
+yarn add mini-css-extract-plugin
 ```
 
 设置配置文件(webpack.config)
+
+方法1：
 
 ```js
 module: {
@@ -106,4 +109,60 @@ module: {
         use: ['style-loader', 'css-loader']
     }]
 }
+```
+
+方法2：
+
+```js
+const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+
+plugins: {
+    new MiniCssExtractPlugin({
+        filename: '[name].[contenthash].css',
+        chunkFilename: '[id].[contenthash].css',
+        ignoreOrder: false,
+    })
+}
+module: {
+    rules: [
+        {
+            test: /\.css$/,
+            use: [
+                {
+                    loader: MiniCssExtractPlugin.loader,
+                    options: {
+                        publicPath: '../',
+                        hmr: process.eny.NODE_ENV === 'development',
+                    }
+                },
+                'css-loader',
+            ]
+        }
+    ]
+}
+```
+
+### 安装webpack-dev-server
+
+```bash
+yarn add webpack-dev-server --dev
+```
+
+配置文件(webpack.config)
+
+```js
+devServer: {
+    contentBase: './dist',
+},
+```
+
+配置package
+```json
+"scripts": {
+    "start": "webpack-dev-server",
+},
+```
+
+```js
+devtool: 'inline-source-map'
 ```

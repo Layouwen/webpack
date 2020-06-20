@@ -11,6 +11,9 @@ module.exports = {
         title: 'test - 首页',
         template: 'src/assets/index.html'
     })],
+    devServer: {
+        contentBase: './dist',
+    },
     module: {
         rules: [{
             test: /\.css$/i,
