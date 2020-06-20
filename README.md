@@ -261,3 +261,9 @@ promise.then((module) => {
     console.log('加载失败')
 })
 ```
+
+### 一件部署脚本
+
+```bash
+sh deploy.sh
+```
