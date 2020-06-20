@@ -75,3 +75,9 @@ yarn add html-webpack-plugin --dev
 
 设置模板(webpack.config)
 
+```js
+plugins: [new HtmlWebpackPlugin({
+    title: 'test - 首页',
+    template: 'src/assets/index.html'
+})]
+```
