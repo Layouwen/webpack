@@ -81,3 +81,9 @@ plugins: [new HtmlWebpackPlugin({
     template: 'src/assets/index.html'
 })]
 ```
+
+在模板那设置同步title
+
+```html
+<title><%= htmlWebpackPlugin.options.title %></title>
+```
