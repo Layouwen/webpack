@@ -66,3 +66,12 @@ npm run build
 或
 yarn build
 ```
+
+6. 安装html-webpack-plugin
+
+```bash
+yarn add html-webpack-plugin --dev
+```
+
+设置模板(webpack.config)
+
