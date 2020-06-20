@@ -1,6 +1,20 @@
 # webpack - study
 
-## 初始配置
+## 一、使用方法
+
+开发
+
+```bash
+yarn start
+```
+
+发布
+
+```bash
+yarn build
+```
+
+## 二、初始配置
 
 ### 初始化
 
